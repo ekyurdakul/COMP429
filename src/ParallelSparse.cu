@@ -208,7 +208,7 @@ int main(int argc, char *argv[])
 	cudaMemcpy(r_next_GPU, r_next, sizeof(double)*N, cudaMemcpyHostToDevice);
 	cudaMemcpy(P_GPU, P, sizeof(double)*P_N, cudaMemcpyHostToDevice);
 	cudaMemcpy(row_begin_GPU, row_begin, sizeof(int)*rows_N, cudaMemcpyHostToDevice);
-	cudaMemcpy(cols_GPU, cols, sizeof(double)*cols_N, cudaMemcpyHostToDevice);
+	cudaMemcpy(cols_GPU, cols, sizeof(int)*cols_N, cudaMemcpyHostToDevice);
 
 	//Start calculating
 	int n = 0;
@@ -233,7 +233,7 @@ int main(int argc, char *argv[])
 			z += abs(r_next[i] - r[i]);
 
 		//Switch pointers
-		cudaMemcpy(r_next_GPU, r_GPU, sizeof(double)*N, cudaMemcpyDeviceToDevice);
+		cudaMemcpy(r_GPU,r_next_GPU, sizeof(double)*N, cudaMemcpyDeviceToDevice);
 		cudaThreadSynchronize();
 
 		//Check if should stop
