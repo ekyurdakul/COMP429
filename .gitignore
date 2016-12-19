@@ -2,5 +2,7 @@ src/Serial
 src/SerialSparse
 src/Parallel
 src/ParallelSparse
+data/GenerateDense
+data/GenerateSparse
 *.o
 *.txt
