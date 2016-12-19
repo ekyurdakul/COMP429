@@ -152,12 +152,14 @@ int main(int argc, char *argv[])
 	//Print stats
 	auto endTime = high_resolution_clock::now();
 	auto duration = endTime - startTime;
-	cout << "Calculation done in " << (duration_cast<milliseconds>(duration).count()) << " ms!" << endl;
+	auto ms = duration_cast<milliseconds>(duration).count();
+	cout << "Calculation done in " << ms << " ms!" << endl;
 	cout << "Number of iterations calculated: " << n << endl;
 
 	ofstream out(filename + "_Serial_PageRanks.txt");
 	if (out.is_open())
 	{
+		out << "Calculation done in " << ms << " ms!" << endl;
 		for (int i = 0; i < N; i++)
 			out << r[i] << endl;
 		out.close();

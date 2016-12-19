@@ -204,12 +204,14 @@ int main(int argc, char *argv[])
 	auto endTime = high_resolution_clock::now();
 	auto duration = endTime - startTime;
 	cudaMemcpy(r, r_GPU, sizeof(double)*N, cudaMemcpyDeviceToHost);
-	cout << "Calculation done in " << (duration_cast<milliseconds>(duration).count()) << " ms!" << endl;
+	auto ms = duration_cast<milliseconds>(duration).count();
+	cout << "Calculation done in " << ms << " ms!" << endl;
 	cout << "Number of iterations calculated: " << n << endl;
 
 	ofstream out(filename + "_Parallel_" + to_string(OpenMPThreads) + " _PageRanks.txt");
 	if (out.is_open())
 	{
+		out << "Calculation done in " << ms << " ms!" << endl;
 		for (int i = 0; i < N; i++)
 			out << r[i] << endl;
 		out.close();
