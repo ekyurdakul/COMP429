@@ -38,18 +38,18 @@ runSerial:
 	-./Serial -file ../data/8192x8192
 
 runParallel:
-	-./Parallel -file ../data/4x4 -threads 4
-	-./Parallel -file ../data/8x8 -threads 4
-	-./Parallel -file ../data/16x16 -threads 4
-	-./Parallel -file ../data/32x32 -threads 4
-	-./Parallel -file ../data/64x64 -threads 4
-	-./Parallel -file ../data/128x128 -threads 4
-	-./Parallel -file ../data/256x256 -threads 4
-	-./Parallel -file ../data/512x512 -threads 4
-	-./Parallel -file ../data/1024x1024 -threads 4
-	-./Parallel -file ../data/2048x2048 -threads 4
-	-./Parallel -file ../data/4096x4096 -threads 4
-	-./Parallel -file ../data/8192x8192 -threads 4
+	-./Parallel -file ../data/4x4 -threads 6
+	-./Parallel -file ../data/8x8 -threads 6
+	-./Parallel -file ../data/16x16 -threads 6
+	-./Parallel -file ../data/32x32 -threads 6
+	-./Parallel -file ../data/64x64 -threads 6
+	-./Parallel -file ../data/128x128 -threads 6
+	-./Parallel -file ../data/256x256 -threads 6
+	-./Parallel -file ../data/512x512 -threads 6
+	-./Parallel -file ../data/1024x1024 -threads 6
+	-./Parallel -file ../data/2048x2048 -threads 6
+	-./Parallel -file ../data/4096x4096 -threads 6
+	-./Parallel -file ../data/8192x8192 -threads 6
 
 runSerialSparse:
 	-./SerialSparse -file ../data/4x4 -n 4
@@ -66,15 +66,15 @@ runSerialSparse:
 	-./SerialSparse -file ../data/8192x8192 -n 8192
 
 runParallelSparse:
-	-./ParallelSparse -file ../data/4x4 -n 4 -threads 4
-	-./ParallelSparse -file ../data/8x8 -n 8 -threads 4
-	-./ParallelSparse -file ../data/16x16 -n 16 -threads 4
-	-./ParallelSparse -file ../data/32x32 -n 32 -threads 4
-	-./ParallelSparse -file ../data/64x64 -n 64 -threads 4
-	-./ParallelSparse -file ../data/128x128 -n 128 -threads 4
-	-./ParallelSparse -file ../data/256x256 -n 256 -threads 4
-	-./ParallelSparse -file ../data/512x512 -n 512 -threads 4
-	-./ParallelSparse -file ../data/1024x1024 -n 1024 -threads 4
-	-./ParallelSparse -file ../data/2048x2048 -n 2048 -threads 4
-	-./ParallelSparse -file ../data/4096x4096 -n 4096 -threads 4
-	-./ParallelSparse -file ../data/8192x8192 -n 8192 -threads 4
+	-./ParallelSparse -file ../data/4x4 -n 4 -threads 6
+	-./ParallelSparse -file ../data/8x8 -n 8 -threads 6
+	-./ParallelSparse -file ../data/16x16 -n 16 -threads 6
+	-./ParallelSparse -file ../data/32x32 -n 32 -threads 6
+	-./ParallelSparse -file ../data/64x64 -n 64 -threads 6
+	-./ParallelSparse -file ../data/128x128 -n 128 -threads 6
+	-./ParallelSparse -file ../data/256x256 -n 256 -threads 6
+	-./ParallelSparse -file ../data/512x512 -n 512 -threads 6
+	-./ParallelSparse -file ../data/1024x1024 -n 1024 -threads 6
+	-./ParallelSparse -file ../data/2048x2048 -n 2048 -threads 6
+	-./ParallelSparse -file ../data/4096x4096 -n 4096 -threads 6
+	-./ParallelSparse -file ../data/8192x8192 -n 8192 -threads 6
