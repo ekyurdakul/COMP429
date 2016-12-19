@@ -216,12 +216,7 @@ int main(int argc, char *argv[])
 	while (true)
 	{
 		//Calculate r_next
-		int threads = 1024;
-		int blocks = N / 1024;
-		if (blocks == 0)
-			blocks = 1;
-		calculateRanks << <blocks, threads >> > (r_next_GPU, P_GPU, r_GPU, c_GPU, N, row_begin_GPU, cols_GPU);
-		cudaThreadSynchronize();
+		calculateRanks<<<256,256>>>(r_next_GPU, P_GPU, r_GPU, c_GPU, N, row_begin_GPU, cols_GPU);
 		n++;
 
 		//Calculate the stopping condition
@@ -234,7 +229,6 @@ int main(int argc, char *argv[])
 
 		//Switch pointers
 		cudaMemcpy(r_GPU,r_next_GPU, sizeof(double)*N, cudaMemcpyDeviceToDevice);
-		cudaThreadSynchronize();
 
 		//Check if should stop
 		if (z <= epsilon || maxIter == n)

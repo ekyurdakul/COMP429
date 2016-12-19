@@ -59,14 +59,6 @@ __global__ void calculateRanks(double* r_next, double* P, double* r, double* c, 
 			r_next[i] += P[i*N + j] * r[j];
 	}
 }
-__global__ void updateValues(double* r, double* r_next, int N)
-{
-	int	i = blockIdx.x*blockDim.x + threadIdx.x;
-	if (i<N)
-		r[i] = r_next[i];
-}
-
-
 
 int main(int argc, char *argv[])
 {
@@ -168,19 +160,13 @@ int main(int argc, char *argv[])
 	cudaMemcpy(r_next_GPU, r_next, sizeof(double)*N, cudaMemcpyHostToDevice);
 	cudaMemcpy(P_GPU, P, sizeof(double)*N2, cudaMemcpyHostToDevice);
 
-
 	//Start calculating
 	int n = 0;
 	auto startTime = high_resolution_clock::now();
 	while (true)
 	{
 		//Calculate r_next
-		int threads = 1024;
-		int blocks = N / 1024;
-		if (blocks == 0)
-			blocks = 1;
-		calculateRanks << <blocks, threads >> > (r_next_GPU, P_GPU, r_GPU, c_GPU, N);
-		cudaThreadSynchronize();
+		calculateRanks<<<256,256>>>(r_next_GPU, P_GPU, r_GPU, c_GPU, N);
 		n++;
 
 		//Calculate the stopping condition
@@ -192,8 +178,7 @@ int main(int argc, char *argv[])
 			z += abs(r_next[i] - r[i]);
 
 		//Switch pointers
-		updateValues << <N, 1 >> > (r_GPU, r_next_GPU, N);
-		cudaThreadSynchronize();
+		cudaMemcpy(r_GPU, r_next_GPU, sizeof(double)*N, cudaMemcpyDeviceToDevice);
 
 		//Check if should stop
 		if (z <= epsilon || maxIter == n)
