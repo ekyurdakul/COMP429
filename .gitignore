@@ -3,3 +3,4 @@ src/SerialSparse
 src/Parallel
 src/ParallelSparse
 *.o
+*.txt
