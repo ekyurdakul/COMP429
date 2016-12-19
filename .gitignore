@@ -1,0 +1,5 @@
+src/Serial
+src/SerialSparse
+src/Parallel
+src/ParallelSparse
+*.o
