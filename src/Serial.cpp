@@ -155,7 +155,7 @@ int main(int argc, char *argv[])
 	cout << "Calculation done in " << (duration_cast<milliseconds>(duration).count()) << " ms!" << endl;
 	cout << "Number of iterations calculated: " << n << endl;
 
-	ofstream out(filename + "_serial_PageRanks.txt");
+	ofstream out(filename + "_Serial_PageRanks.txt");
 	if (out.is_open())
 	{
 		for (int i = 0; i < N; i++)
