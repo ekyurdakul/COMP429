@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	N2 = numberOfEntries(filename);
+	N2 = numberOfEntries(filename + ".txt");
 
 	if (N2 == -1)
 	{
@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
 		r_next[i] = 0.0;
 	}
 	//Override link matrix with file
-	readFileToArray(filename, P, N2);
+	readFileToArray(filename + ".txt", P, N2);
 
 	//Damping factor
 	for (int i = 0; i < N2; i++)
