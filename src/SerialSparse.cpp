@@ -129,8 +129,8 @@ int main(int argc, char *argv[])
 	int* row_begin, *cols;
 	double* P;
 
-	int cols_N = numberOfEntries(filename + "_cols.txt");
-	int rows_N = numberOfEntries(filename + "_rows.txt");
+	int cols_N = numberOfEntries(filename + "_N2.txt");
+	int rows_N = numberOfEntries(filename + "_N1.txt");
 	int P_N = numberOfEntries(filename + "_P.txt");
 
 	if (cols_N == -1 || rows_N == -1 || P_N == -1)
@@ -153,8 +153,8 @@ int main(int argc, char *argv[])
 
 	//Override files
 	readFileToArray(filename + "_P.txt", P, P_N);
-	readFileToArray(filename + "_cols.txt", cols, cols_N);
-	readFileToArray(filename + "_rows.txt", row_begin, rows_N);
+	readFileToArray(filename + "_N2.txt", cols, cols_N);
+	readFileToArray(filename + "_N1.txt", row_begin, rows_N);
 
 	//Damping factor
 	for (int i = 0; i < P_N; i++)
