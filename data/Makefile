@@ -24,18 +24,18 @@ dense:
 	-./GenerateDense 8192x8192.txt 8192
 
 sparse:
-	-./GenerateSparse 4x4 4 0.3
-	-./GenerateSparse 8x8 8 0.3
-	-./GenerateSparse 16x16 16 0.3
-	-./GenerateSparse 32x32 32 0.3
-	-./GenerateSparse 64x64 64 0.3
-	-./GenerateSparse 128x128 128 0.3
-	-./GenerateSparse 256x256 256 0.3
-	-./GenerateSparse 512x512 512 0.3
-	-./GenerateSparse 1024x1024 1024 0.3
-	-./GenerateSparse 2048x2048 2048 0.3
-	-./GenerateSparse 4096x4096 4096 0.3
-	-./GenerateSparse 8192x8192 8192 0.3
+	-./GenerateSparse 4x4 4 0.2
+	-./GenerateSparse 8x8 8 0.2
+	-./GenerateSparse 16x16 16 0.1
+	-./GenerateSparse 32x32 32 0.1
+	-./GenerateSparse 64x64 64 0.1
+	-./GenerateSparse 128x128 128 0.1
+	-./GenerateSparse 256x256 256 0.1
+	-./GenerateSparse 512x512 512 0.1
+	-./GenerateSparse 1024x1024 1024 0.1
+	-./GenerateSparse 2048x2048 2048 0.1
+	-./GenerateSparse 4096x4096 4096 0.1
+	-./GenerateSparse 8192x8192 8192 0.1
 
 clean:
 	-rm *.o GenerateDense GenerateSparse
