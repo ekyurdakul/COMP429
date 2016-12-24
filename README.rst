@@ -68,7 +68,7 @@ Optional Arguments:
 
 References
 ----------
-#) \S. Brin, L. Page. The Anatomy of a Large-Scale Hypertextual Web Search Engine. http://infolab.stanford.edu/~backrub/google.html
-#) \I. Rogers. The Google Pagerank Algorithm and How It Works. http://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm
-#) \K. Bryan, T. Leise. The $25,000,000,000 Eigenvector The Linear Algebra Behind Google. http://www.rose-hulman.edu/~bryan/googleFinalVersionFixed.pdf
-#) http://www.cmpe.boun.edu.tr/~ozturan/etm555/google.pdf
+.. [#] \S. Brin, L. Page. The Anatomy of a Large-Scale Hypertextual Web Search Engine. http://infolab.stanford.edu/~backrub/google.html
+.. [#] \I. Rogers. The Google Pagerank Algorithm and How It Works. http://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm
+.. [#] \K. Bryan, T. Leise. The $25,000,000,000 Eigenvector The Linear Algebra Behind Google. http://www.rose-hulman.edu/~bryan/googleFinalVersionFixed.pdf
+.. [#] http://www.cmpe.boun.edu.tr/~ozturan/etm555/google.pdf
